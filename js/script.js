@@ -5,21 +5,38 @@ window.addEventListener('DOMContentLoaded', function() {
 		info = document.querySelector('.info-header'),
 		tabContent = document.querySelectorAll('.info-tabcontent');
 
-	function hideTabContent(a) {
+	// function hideTabContent(a) {
+	// 	for (let i = a; i < tabContent.length; i++) {
+	// 		tabContent[i].classList.remove('show');
+	// 		tabContent[i].classList.add('hide');
+	// 	}
+	// }	
+	
+	// hideTabContent(1);
+
+	let hideTabContent = (a) => {
 		for (let i = a; i < tabContent.length; i++) {
 			tabContent[i].classList.remove('show');
 			tabContent[i].classList.add('hide');
-		}
-	}	
+				}
+	};
 	
 	hideTabContent(1);
 
-	function showTabContent(b) {
+	// function showTabContent(b) {
+	// 	if (tabContent[b].classList.contains('hide')) {
+	// 		tabContent[b].classList.remove('hide');
+	// 		tabContent[b].classList.add('show');
+	// 	}
+	// }
+
+	let showTabContent = (b) => {
 		if (tabContent[b].classList.contains('hide')) {
 			tabContent[b].classList.remove('hide');
 			tabContent[b].classList.add('show');
-		}
+			}
 	}
+
 
 	info.addEventListener('click', function(event) {
 		let target = event.target;
@@ -72,6 +89,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			hours.textContent = t.hours;
 			minutes.textContent = t.minutes;
 			seconds.textContent = t.seconds;
+			
 
 			
 
@@ -122,10 +140,8 @@ window.addEventListener('DOMContentLoaded', function() {
 			document.body.style.overflow = 'hidden';
 			console.log(this);
 		});
-	})
+	});
 
-
-			
 });
 
 

@@ -1,3 +1,6 @@
-arr = ['tree', 'river', 'sky', 'plants', 'grass', 'sun']
+function hui(a, b) {
+		console.log(this)
+		return a
+	}
 
-console.log(arr.slice(-2, 6))
+	console.log(hui(5, 6));
