@@ -1,20 +1,12 @@
 window.addEventListener('DOMContentLoaded', function() {
 
 	'use strict';
-	let tab = document.querySelectorAll('.info-header-tab'),
+	const tab = document.querySelectorAll('.info-header-tab'),
 		info = document.querySelector('.info-header'),
 		tabContent = document.querySelectorAll('.info-tabcontent');
 
-	// function hideTabContent(a) {
-	// 	for (let i = a; i < tabContent.length; i++) {
-	// 		tabContent[i].classList.remove('show');
-	// 		tabContent[i].classList.add('hide');
-	// 	}
-	// }	
-	
-	// hideTabContent(1);
 
-	let hideTabContent = (a) => {
+	const hideTabContent = (a) => {
 		for (let i = a; i < tabContent.length; i++) {
 			tabContent[i].classList.remove('show');
 			tabContent[i].classList.add('hide');
@@ -23,14 +15,8 @@ window.addEventListener('DOMContentLoaded', function() {
 	
 	hideTabContent(1);
 
-	// function showTabContent(b) {
-	// 	if (tabContent[b].classList.contains('hide')) {
-	// 		tabContent[b].classList.remove('hide');
-	// 		tabContent[b].classList.add('show');
-	// 	}
-	// }
 
-	let showTabContent = (b) => {
+	const showTabContent = (b) => {
 		if (tabContent[b].classList.contains('hide')) {
 			tabContent[b].classList.remove('hide');
 			tabContent[b].classList.add('show');
@@ -38,16 +24,28 @@ window.addEventListener('DOMContentLoaded', function() {
 	}
 
 
-	info.addEventListener('click', function(event) {
+	// info.addEventListener('click', function(event) {
+	// 	let target = event.target;
+	// 	if (target && target.classList.contains('info-header-tab')) {
+	// 		for(let i = 0; i < tab.length; i++) {
+	// 			if (target == tab[i]) {
+	// 				hideTabContent(0);
+	// 				showTabContent(i);
+	// 				break;
+	// 			}
+	// 		}
+	// 	}
+	// });
+
+	info.addEventListener('click', (event) => {
 		let target = event.target;
 		if (target && target.classList.contains('info-header-tab')) {
-			for(let i = 0; i < tab.length; i++) {
-				if (target == tab[i]) {
+			tab.forEach((item, i) => {
+				if (target == item) {
 					hideTabContent(0);
 					showTabContent(i);
-					break;
 				}
-			}
+			});
 		}
 	});
 
@@ -111,29 +109,18 @@ window.addEventListener('DOMContentLoaded', function() {
 
 	//Modal
 
-	let more = document.querySelector('.more'),
-		
+	const more = document.querySelectorAll('.more, .description-btn'),
 		overlay = document.querySelector('.overlay'),
 		close = document.querySelector('.popup-close');
 
-
 	
-	more.addEventListener('click', function() {
-		overlay.style.display = 'block';
-		this.classList.add('more-splash');
-		document.body.style.overflow = 'hidden';
-	});
+	// more.addEventListener('click', function() {
+	// 	overlay.style.display = 'block';
+	// 	this.classList.add('more-splash');
+	// 	document.body.style.overflow = 'hidden';
+	// });
 
-	close.addEventListener('click', function() {
-		overlay.style.display = 'none';
-		more.classList.remove('more-splash');
-		document.body.style.overflow = '';
-	});
-
-	let more2 = Array.from(document.querySelectorAll('.description-btn'));
-	
-
-	more2.forEach(el => {
+	more.forEach(el => {
 		el.addEventListener('click', function (event) {
 			overlay.style.display = 'block';
 			this.classList.add('more-splash');
@@ -142,6 +129,14 @@ window.addEventListener('DOMContentLoaded', function() {
 		});
 	});
 
+	
+	close.addEventListener('click', function() {
+		overlay.style.display = 'none';
+		this.classList.remove('more-splash');
+		document.body.style.overflow = '';
+	});
+
+	// let more2 = Array.from(document.querySelectorAll('.description-btn'));
 });
 
 
