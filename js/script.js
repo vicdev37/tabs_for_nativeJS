@@ -207,7 +207,7 @@ function sendForm(elem) {
 		for (let i = 0; i < input.length; i++) {
 			input[i].value = '';
 		}
-		input.addEventListener(onkeyup = "this.value = this.value.replace (/[^0-9+]/, '')")
+		
 	});
 }
 	sendForm(form);
