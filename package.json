@@ -1,0 +1,31 @@
+{
+  "name": "project_yoga_11",
+  "version": "1.0.0",
+  "description": "Usage",
+  "main": "second_js.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "browserify": "^16.2.3",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vicdev37/tabs_for_nativeJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vicdev37/tabs_for_nativeJS/issues"
+  },
+  "homepage": "https://github.com/vicdev37/tabs_for_nativeJS#readme"
+}
